@@ -5,7 +5,7 @@ const Mostrarnumero = (props) => {
   return(
     <p>
     {props.numero}
-    Voltas
+
     </p>
   )
 }
@@ -18,9 +18,7 @@ const tempo = (props) => {
 }
 const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
 
-
 function App() {
-  
   const [numeroVoltas, setNumero] = useState(0);
   const [tempo, setTempo] = useState(0);
 
@@ -38,10 +36,10 @@ function App() {
     <div>
 
       {numeroVoltas} <br/>
+      Voltas<br/>
 
     <Button onClick={incrementNumeroVoltas} text='+' />
     <Button onClick={decrementNumeroVoltas} text='-' /> <br/>
-    <Button onClick={resetNumeroVoltas} text='Resetar' />
     <p>
       {tempo}<br/>
       Tempo
