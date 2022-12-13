@@ -10,9 +10,14 @@ const Mostrarnumero = (props) => {
   )
 }
 const MostrarTempo = (props) => {
+  const tempo = props.tempo
+  const minutos = Math.round(tempo / 60)
+  const segundos = tempo % 60
+  const minutosStr = minutos < 10 ? '0' + minutos : minutos
+  const segundosStr = minutos < 10 ? '0' + minutos : segundos
   return(
     <p>
-    {props.tempo} <br/>
+    {`${minutosStr}:${segundosStr}`} <br/>
     Tempo
     </p>
   )
@@ -29,7 +34,7 @@ function App() {
     if (running) {
       timer = setInterval ( () =>{
         setTempo(old => old + 1)
-      },1000 )
+      },100 )
     }
     return () => {
       if (timer) {
